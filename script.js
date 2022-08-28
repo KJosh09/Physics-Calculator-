@@ -9,7 +9,11 @@ function calcKineticEnergy() {
     console.log(step2*mass)
     var step3 = step2*mass
     var answer = step3/2
-    document.getElementById("answerKineticEnergy").innerHTML = answer
+    if (velocity == 0 || mass == 0 ) {
+        window.alert("Mass or velocity have not been inputted")
+    }
+
+    document.getElementById("answerKinetic").innerHTML = answer
 }
 
 function calcPotentialEnergy() {
@@ -22,7 +26,10 @@ function calcPotentialEnergy() {
     console.log(distance)
     console.log(mass*distance*gravity)
     var answerP = mass*distance*gravity
-    document.getElementById("answerPotentialEnergy").innerHTML = answerP
+    if (gravity == 0 || distance == 0 || mass == 0 ) {
+        window.alert("Mass, distance or gravity have not been inputted")
+    }
+    document.getElementById("answerPotential").innerHTML = answerP
 }
 
 function calcVelocity() {
